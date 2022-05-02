@@ -1,0 +1,16 @@
+<app-header></app-header>
+<br>
+
+<div class="container-md">
+    <form #form="ngForm" (submit)="update(form)" ngNativeValidate> 
+        <div class="form-group">
+          <label for="exampleInputEmail1">Fullname</label>
+          <input type="text" class="form-control" id="exampleInputEmail1" name="fullname" aria-describedby="emailHelp" placeholder="Enter Fullname" minlength="5" ngModel required>
+          <small id="emailHelp" class="form-text text-muted">We'll never share your information with anyone else.</small>
+        </div>
+        <button type="submit" class="btn btn-primary">Submit</button>
+      </form>
+</div>
+
+
+<app-footer></app-footer>

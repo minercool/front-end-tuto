@@ -1,0 +1,33 @@
+<app-header></app-header>
+<br>
+<div class="container-md">
+  <div *ngIf="persons == 0 || !persons" class="alert alert-warning">No people found</div>
+    <table class="table">
+        <thead>
+          <tr>
+            <th scope="col">#</th>
+            <th scope="col">Full Name</th>
+            <th scope="col"><button type="button" class="btn btn-success" [routerLink]="['/create-person']" >Create person</button></th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let person of persons ; let i = index">
+            <th scope="row">{{person.id}}</th>
+            <td>{{person.fullname}}</td>
+           
+            <td>
+              <div class="btn-group" role="group" aria-label="Basic example" style="margin-right: 10px;">
+              <button type="button" class="btn btn-info" [routerLink]="['/show-person/',person.id]">Info</button>
+              </div>
+              <div class="btn-group mr-2" role="group" aria-label="Second group">
+                <button type="button" class="btn btn-success" [routerLink]="['/update-person/',person.id]">Update</button>
+              </div>
+              <div class="btn-group" role="group" aria-label="Third group">
+                <button type="button" class="btn btn-danger" (click)="delete(person)" style="margin-left: 10px;">Delete</button>
+              </div>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+  </div>
+<app-footer></app-footer>
